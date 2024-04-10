@@ -40,7 +40,7 @@ namespace SuperHero.Controllers
             
             _shero.AddHero(newhero);
 
-            return Ok(Store.superheroList);
+            return Ok(_shero.GetHeroes());
         }
 
         [HttpDelete("{id:int}")]

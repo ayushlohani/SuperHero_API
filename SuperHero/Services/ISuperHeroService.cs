@@ -6,7 +6,7 @@
 
         Hero GetHero(int id);
 
-        List<Hero> AddHero(Hero newhero);
+        void AddHero(Hero newhero);
 
         void DeleteHero(int id);
 

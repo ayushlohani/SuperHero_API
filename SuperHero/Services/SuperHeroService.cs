@@ -3,11 +3,10 @@ namespace SuperHero.Services
 {
     public class SuperHeroService : ISuperHeroService
     {
-        public List<Hero> AddHero(Hero newhero)
+        public void AddHero(Hero newhero)
         {
             newhero.Id = Store.superheroList.OrderByDescending(x => x.Id).FirstOrDefault().Id + 1;
             Store.superheroList.Add(newhero);
-            return Store.superheroList;
         }
 
         public void DeleteHero(int id)

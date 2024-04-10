@@ -5,13 +5,13 @@
         private readonly DataContext _db;
 
         public SuperHeroServiceV2(DataContext db) {  _db = db; }
-        public List<Hero> AddHero(Hero newhero)
+        public void AddHero(Hero newhero)
         {
-            if (_db.Heroes.ToList() == null) newhero.Id = 1;
-            else newhero.Id = _db.Heroes.ToList().OrderByDescending(x => x.Id).FirstOrDefault().Id + 1;
+            //var id = _db.Heroes.OrderByDescending(x => x.Id).FirstOrDefault().Id + 1;
+            //Hero model = new() {Id = id, Name = newhero.Name,Description = newhero.Description,Title = newhero.Title};
+
             _db.Heroes.Add(newhero);
-            _db.SaveChanges();
-            return _db.Heroes.ToList();
+            _db.SaveChanges(); 
         }
 
         public void DeleteHero(int id)
