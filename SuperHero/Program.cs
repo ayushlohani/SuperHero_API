@@ -20,7 +20,7 @@ builder.Services.AddDbContext<DataContext>(option =>
 
 var app = builder.Build();
 
-app.UseCors(c => c.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+app.UseCors(c => c.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod()); //CORS used when we run progeam in different PORTS
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
